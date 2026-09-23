@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HPL | توليب للمطابخ</title>
+
+
+    <style>
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #20201e;
+            color: #fff;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .hpl-header {
+
+            width: 100%;
+
+            padding: 30px 6%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom: 1px solid rgba(255,255,255,.10);
+
+        }
+
+
+        .hpl-logo {
+
+            font-size: 23px;
+
+            letter-spacing: 4px;
+
+            color: #fff;
+
+        }
+
+
+        .hpl-logo span {
+
+            display: block;
+
+            margin-top: 5px;
+
+            color: #b89b70;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .hpl-back {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 11px 20px;
+
+            color: #fff;
+
+            text-decoration: none;
+
+            border: 1px solid rgba(255,255,255,.25);
+
+            font-size: 13px;
+
+            transition: .3s;
+
+        }
+
+
+        .hpl-back:hover {
+
+            background: #b89b70;
+
+            border-color: #b89b70;
+
+            color: #20201e;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hpl-hero {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 100px 6% 80px;
+
+            text-align: center;
+
+        }
+
+
+        .hpl-label {
+
+            display: block;
+
+            margin-bottom: 22px;
+
+            color: #b89b70;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .hpl-hero h1 {
+
+            font-size: clamp(50px, 7vw, 90px);
+
+            font-weight: 300;
+
+            line-height: 1;
+
+        }
+
+
+        .hpl-hero h1 span {
+
+            display: block;
+
+            margin-top: 15px;
+
+            color: #b89b70;
+
+            font-size: .38em;
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .hpl-hero p {
+
+            max-width: 600px;
+
+            margin: 30px auto 0;
+
+            color: #aaa7a0;
+
+            font-size: 14px;
+
+            line-height: 2;
+
+        }
+
+
+        /* =====================================================
+           SECTION TITLES
+        ===================================================== */
+
+        .hpl-section-title {
+
+            max-width: 1150px;
+
+            margin: 0 auto 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        .hpl-section-number {
+
+            color: #b89b70;
+
+            font-family: Georgia, serif;
+
+            font-size: 16px;
+
+        }
+
+
+        .hpl-section-title small {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #77736d;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .hpl-section-title h2 {
+
+            margin: 0;
+
+            color: #fff;
+
+            font-size: 23px;
+
+            font-weight: 400;
+
+        }
+
+
+        /* =====================================================
+           VIDEOS SECTION
+        ===================================================== */
+
+        .hpl-videos-section {
+
+            padding: 20px 6% 100px;
+
+        }
+
+
+        .hpl-video-slider {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+
+        .hpl-video-track {
+
+            width: 100%;
+
+            display: flex;
+
+            gap: 18px;
+
+            overflow-x: auto;
+
+            scroll-behavior: smooth;
+
+            scrollbar-width: none;
+
+            scroll-snap-type: x mandatory;
+
+            cursor: grab;
+
+        }
+
+
+        .hpl-video-track::-webkit-scrollbar {
+
+            display: none;
+
+        }
+
+
+        .hpl-video-track:active {
+
+            cursor: grabbing;
+
+        }
+
+
+        .hpl-video-card {
+
+            flex: 0 0 calc((100% - 36px) / 3);
+
+            aspect-ratio: 16 / 10;
+
+            overflow: hidden;
+
+            background: #111;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            scroll-snap-align: center;
+
+        }
+
+
+        .hpl-video-card video {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+        }
+
+
+        /* =====================================================
+           VIDEO ARROWS
+        ===================================================== */
+
+        .hpl-video-arrow {
+
+            flex-shrink: 0;
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(184,155,112,.5);
+
+            background: transparent;
+
+            color: #c3a77e;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+
+        .hpl-video-arrow:hover {
+
+            background: #b89b70;
+
+            color: #20201e;
+
+        }
+
+
+        /* =====================================================
+           VIDEO DOTS
+        ===================================================== */
+
+        .hpl-video-dots {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin: 25px 0 90px;
+
+        }
+
+
+        .hpl-video-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            padding: 0;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: #68645e;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+
+        .hpl-video-dot.active {
+
+            width: 28px;
+
+            border-radius: 10px;
+
+            background: #b89b70;
+
+        }
+
+
+        /* =====================================================
+           PHOTOS
+        ===================================================== */
+
+        .hpl-photos-section {
+
+            padding: 0 6% 110px;
+
+        }
+
+
+        .hpl-photo-grid {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 14px;
+
+        }
+
+
+        .hpl-photo {
+
+            position: relative;
+
+            aspect-ratio: 1 / 1;
+
+            overflow: hidden;
+
+            background: #111;
+
+            cursor: pointer;
+
+        }
+
+
+        .hpl-photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition: transform .5s ease;
+
+        }
+
+
+        .hpl-photo::after {
+
+            content: "＋";
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: rgba(0,0,0,.38);
+
+            color: #fff;
+
+            font-size: 30px;
+
+            opacity: 0;
+
+            transition: .3s;
+
+        }
+
+
+        .hpl-photo:hover::after {
+
+            opacity: 1;
+
+        }
+
+
+        .hpl-photo:hover img {
+
+            transform: scale(1.06);
+
+        }
+
+
+        /* =====================================================
+           LIGHTBOX
+        ===================================================== */
+
+        .hpl-lightbox {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+
+            background: rgba(0,0,0,.95);
+
+        }
+
+
+        .hpl-lightbox.active {
+
+            display: flex;
+
+        }
+
+
+        .hpl-lightbox img {
+
+            max-width: 85vw;
+
+            max-height: 85vh;
+
+            object-fit: contain;
+
+        }
+
+
+        .hpl-lightbox-close {
+
+            position: absolute;
+
+            top: 25px;
+
+            right: 30px;
+
+            width: 48px;
+
+            height: 48px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #fff;
+
+            font-size: 38px;
+
+            cursor: pointer;
+
+        }
+
+
+        .hpl-lightbox-prev,
+        .hpl-lightbox-next {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,.3);
+
+            background: rgba(255,255,255,.05);
+
+            color: #fff;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+
+        .hpl-lightbox-prev {
+
+            right: 30px;
+
+        }
+
+
+        .hpl-lightbox-next {
+
+            left: 30px;
+
+        }
+
+
+        .hpl-lightbox-prev:hover,
+        .hpl-lightbox-next:hover,
+        .hpl-lightbox-close:hover {
+
+            color: #b89b70;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .hpl-footer {
+
+            padding: 35px 6%;
+
+            border-top: 1px solid rgba(255,255,255,.1);
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+        .hpl-footer strong {
+
+            color: #b89b70;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+            .hpl-header {
+
+                padding: 24px 5%;
+
+            }
+
+
+            .hpl-logo {
+
+                font-size: 19px;
+
+            }
+
+
+            .hpl-back {
+
+                padding: 9px 13px;
+
+                font-size: 12px;
+
+            }
+
+
+            .hpl-hero {
+
+                padding: 75px 5% 60px;
+
+            }
+
+
+            .hpl-hero h1 {
+
+                font-size: 55px;
+
+            }
+
+
+            .hpl-videos-section {
+
+                padding: 10px 5% 70px;
+
+            }
+
+
+            .hpl-video-slider {
+
+                gap: 8px;
+
+            }
+
+
+            .hpl-video-card {
+
+                flex: 0 0 86%;
+
+            }
+
+
+            .hpl-video-arrow {
+
+                width: 40px;
+
+                height: 40px;
+
+                font-size: 17px;
+
+            }
+
+
+            .hpl-photos-section {
+
+                padding: 0 5% 80px;
+
+            }
+
+
+            .hpl-photo-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 10px;
+
+            }
+
+
+            .hpl-section-title h2 {
+
+                font-size: 19px;
+
+            }
+
+
+            .hpl-lightbox {
+
+                padding: 15px;
+
+            }
+
+
+            .hpl-lightbox img {
+
+                max-width: 92vw;
+
+                max-height: 80vh;
+
+            }
+
+
+            .hpl-lightbox-prev {
+
+                right: 10px;
+
+            }
+
+
+            .hpl-lightbox-next {
+
+                left: 10px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="hpl-header">
+
+        <div class="hpl-logo">
+
+            TULIP
+
+            <span>للمطابخ</span>
+
+        </div>
+
+
+        <a
+            href="index.html#work-categories"
+            class="hpl-back"
+        >
+
+            ← رجوع لأعمالنا
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="hpl-hero">
+
+        <span class="hpl-label">
+
+            02 • أعمالنا
+
+        </span>
+
+
+        <h1>
+
+            HPL
+
+            <span>
+                خامة تجمع بين الشكل والعملية
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            مجموعة من أعمالنا باستخدام خامات HPL
+            بتصميمات عصرية وتفاصيل عملية تناسب
+            مختلف المساحات والاحتياجات.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VIDEOS
+    ===================================================== -->
+
+    <section class="hpl-videos-section">
+
+
+        <div class="hpl-section-title">
+
+            <span class="hpl-section-number">
+                01
+            </span>
+
+            <div>
+
+                <small>
+                    VIDEO SHOWCASE
+                </small>
+
+                <h2>
+                    شوف الشغل على حقيقته
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hpl-video-slider">
+
+
+            <button
+                class="hpl-video-arrow"
+                id="hplPrev"
+                type="button"
+            >
+                →
+            </button>
+
+
+
+            <div
+                class="hpl-video-track"
+                id="hplVideoTrack"
+            >
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h1.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h2.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h3.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h4.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h5.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h6.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h7.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h8.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h9.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h10.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h11.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h12.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h13.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+                <div class="hpl-video-card">
+                    <video controls playsinline preload="metadata">
+                        <source src="hpl/h14.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+
+            </div>
+
+
+
+            <button
+                class="hpl-video-arrow"
+                id="hplNext"
+                type="button"
+            >
+                ←
+            </button>
+
+
+        </div>
+
+
+
+        <!-- DOTS -->
+
+        <div
+            class="hpl-video-dots"
+            id="hplVideoDots"
+        >
+
+            <button class="hpl-video-dot active"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+            <button class="hpl-video-dot"></button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PHOTOS
+    ===================================================== -->
+
+    <section class="hpl-photos-section">
+
+
+        <div class="hpl-section-title">
+
+            <span class="hpl-section-number">
+                02
+            </span>
+
+            <div>
+
+                <small>
+                    PHOTO GALLERY
+                </small>
+
+                <h2>
+                    من تفاصيل شغلنا
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hpl-photo-grid">
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h1.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h2.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h3.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h4.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h5.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h6.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h7.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h8.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h9.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h10.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h11.jpg" alt="HPL توليب">
+            </div>
+
+
+            <div class="hpl-photo">
+                <img src="hpl/h12.jpg" alt="HPL توليب">
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LIGHTBOX
+    ===================================================== -->
+
+    <div
+        class="hpl-lightbox"
+        id="hplLightbox"
+    >
+
+
+        <button
+            class="hpl-lightbox-close"
+            id="hplClose"
+            type="button"
+        >
+            ×
+        </button>
+
+
+        <button
+            class="hpl-lightbox-prev"
+            id="hplLightboxPrev"
+            type="button"
+        >
+            →
+        </button>
+
+
+        <img
+            id="hplLightboxImage"
+            src=""
+            alt="HPL توليب"
+        >
+
+
+        <button
+            class="hpl-lightbox-next"
+            id="hplLightboxNext"
+            type="button"
+        >
+            ←
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="hpl-footer">
+
+        © 2026
+
+        <strong>
+            توليب للمطابخ
+        </strong>
+
+        — جميع الحقوق محفوظة
+
+    </footer>
+
+
+
+    <script>
+
+
+        /* =====================================================
+           VIDEO SLIDER
+        ===================================================== */
+
+        const hplTrack =
+            document.getElementById("hplVideoTrack");
+
+
+        const hplPrev =
+            document.getElementById("hplPrev");
+
+
+        const hplNext =
+            document.getElementById("hplNext");
+
+
+        const hplDots =
+            document.querySelectorAll(
+                ".hpl-video-dot"
+            );
+
+
+        const hplCards =
+            document.querySelectorAll(
+                ".hpl-video-card"
+            );
+
+
+        function moveHplVideos(direction) {
+
+            const card =
+                hplCards[0];
+
+            if (!card) return;
+
+
+            const amount =
+                card.offsetWidth + 18;
+
+
+            hplTrack.scrollBy({
+
+                left: direction * amount,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+        hplPrev.addEventListener(
+            "click",
+            () => {
+
+                moveHplVideos(1);
+
+            }
+        );
+
+
+        hplNext.addEventListener(
+            "click",
+            () => {
+
+                moveHplVideos(-1);
+
+            }
+        );
+
+
+
+        /* =====================================================
+           DOTS
+        ===================================================== */
+
+        hplDots.forEach(
+            (dot, index) => {
+
+                dot.addEventListener(
+                    "click",
+                    () => {
+
+                        const card =
+                            hplCards[index];
+
+                        if (!card) return;
+
+
+                        hplTrack.scrollTo({
+
+                            left: card.offsetLeft,
+
+                            behavior: "smooth"
+
+                        });
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           UPDATE DOT
+        ===================================================== */
+
+        hplTrack.addEventListener(
+            "scroll",
+            () => {
+
+                let closestIndex = 0;
+
+                let smallestDistance =
+                    Infinity;
+
+
+                hplCards.forEach(
+                    (card, index) => {
+
+                        const distance =
+                            Math.abs(
+                                card.offsetLeft -
+                                hplTrack.scrollLeft
+                            );
+
+
+                        if (
+                            distance <
+                            smallestDistance
+                        ) {
+
+                            smallestDistance =
+                                distance;
+
+                            closestIndex =
+                                index;
+
+                        }
+
+                    }
+                );
+
+
+                hplDots.forEach(
+                    (dot, index) => {
+
+                        dot.classList.toggle(
+                            "active",
+                            index === closestIndex
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           MOUSE DRAG
+        ===================================================== */
+
+        let hplDragging = false;
+
+        let hplStartX = 0;
+
+        let hplStartScroll = 0;
+
+
+        hplTrack.addEventListener(
+            "mousedown",
+            (e) => {
+
+                hplDragging = true;
+
+                hplStartX = e.pageX;
+
+                hplStartScroll =
+                    hplTrack.scrollLeft;
+
+            }
+        );
+
+
+        hplTrack.addEventListener(
+            "mouseup",
+            () => {
+
+                hplDragging = false;
+
+            }
+        );
+
+
+        hplTrack.addEventListener(
+            "mouseleave",
+            () => {
+
+                hplDragging = false;
+
+            }
+        );
+
+
+        hplTrack.addEventListener(
+            "mousemove",
+            (e) => {
+
+                if (!hplDragging) return;
+
+                e.preventDefault();
+
+
+                const walk =
+                    (e.pageX - hplStartX) * 1.3;
+
+
+                hplTrack.scrollLeft =
+                    hplStartScroll - walk;
+
+            }
+        );
+
+
+
+        /* =====================================================
+           LIGHTBOX
+        ===================================================== */
+
+        const hplPhotos =
+            document.querySelectorAll(
+                ".hpl-photo img"
+            );
+
+
+        const hplLightbox =
+            document.getElementById(
+                "hplLightbox"
+            );
+
+
+        const hplLightboxImage =
+            document.getElementById(
+                "hplLightboxImage"
+            );
+
+
+        const hplClose =
+            document.getElementById(
+                "hplClose"
+            );
+
+
+        const hplLightboxPrev =
+            document.getElementById(
+                "hplLightboxPrev"
+            );
+
+
+        const hplLightboxNext =
+            document.getElementById(
+                "hplLightboxNext"
+            );
+
+
+        let hplCurrentPhoto = 0;
+
+
+
+        /* OPEN */
+
+        function openHplPhoto(index) {
+
+            hplCurrentPhoto = index;
+
+
+            hplLightboxImage.src =
+                hplPhotos[hplCurrentPhoto].src;
+
+
+            hplLightbox.classList.add(
+                "active"
+            );
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+
+        /* CLOSE */
+
+        function closeHplPhoto() {
+
+            hplLightbox.classList.remove(
+                "active"
+            );
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+
+        /* PHOTO CLICK */
+
+        hplPhotos.forEach(
+            (photo, index) => {
+
+                photo.parentElement.addEventListener(
+                    "click",
+                    () => {
+
+                        openHplPhoto(index);
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* NEXT */
+
+        function nextHplPhoto() {
+
+            hplCurrentPhoto++;
+
+
+            if (
+                hplCurrentPhoto >=
+                hplPhotos.length
+            ) {
+
+                hplCurrentPhoto = 0;
+
+            }
+
+
+            hplLightboxImage.src =
+                hplPhotos[hplCurrentPhoto].src;
+
+        }
+
+
+
+        /* PREVIOUS */
+
+        function previousHplPhoto() {
+
+            hplCurrentPhoto--;
+
+
+            if (hplCurrentPhoto < 0) {
+
+                hplCurrentPhoto =
+                    hplPhotos.length - 1;
+
+            }
+
+
+            hplLightboxImage.src =
+                hplPhotos[hplCurrentPhoto].src;
+
+        }
+
+
+
+        hplLightboxNext.addEventListener(
+            "click",
+            nextHplPhoto
+        );
+
+
+        hplLightboxPrev.addEventListener(
+            "click",
+            previousHplPhoto
+        );
+
+
+        hplClose.addEventListener(
+            "click",
+            closeHplPhoto
+        );
+
+
+
+        /* CLOSE BY BACKGROUND */
+
+        hplLightbox.addEventListener(
+            "click",
+            (e) => {
+
+                if (
+                    e.target ===
+                    hplLightbox
+                ) {
+
+                    closeHplPhoto();
+
+                }
+
+            }
+        );
+
+
+
+        /* ESC */
+
+        document.addEventListener(
+            "keydown",
+            (e) => {
+
+                if (
+                    !hplLightbox.classList.contains(
+                        "active"
+                    )
+                ) return;
+
+
+                if (
+                    e.key === "Escape"
+                ) {
+
+                    closeHplPhoto();
+
+                }
+
+
+                if (
+                    e.key === "ArrowRight"
+                ) {
+
+                    previousHplPhoto();
+
+                }
+
+
+                if (
+                    e.key === "ArrowLeft"
+                ) {
+
+                    nextHplPhoto();
+
+                }
+
+            }
+        );
+
+
+    </script>
+
+</body>
+
+</html>
