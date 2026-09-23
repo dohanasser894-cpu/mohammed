@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>خشمونيوم | توليب للمطابخ</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #20201e;
+            color: #f4f0e8;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 100%;
+
+            z-index: 20;
+
+            padding: 25px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .logo {
+            text-decoration: none;
+            color: #f4f0e8;
+            line-height: 1.1;
+        }
+
+
+        .logo strong {
+
+            display: block;
+
+            font-size: 24px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .logo span {
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            color: #c8a96b;
+        }
+
+
+        .back-btn {
+
+            text-decoration: none;
+
+            color: #f4f0e8;
+
+            border-bottom: 1px solid #c8a96b;
+
+            padding-bottom: 5px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .back-btn:hover {
+            color: #c8a96b;
+        }
+
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .page-hero {
+
+            min-height: 55vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 150px 7% 80px;
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 50%,
+                    rgba(200,169,107,0.12),
+                    transparent 35%
+                ),
+
+                #20201e;
+        }
+
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+
+        .hero-number {
+
+            color: #c8a96b;
+
+            font-size: 14px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero-title {
+
+            font-size: clamp(55px, 9vw, 120px);
+
+            font-weight: 500;
+
+            line-height: 0.95;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero-title span {
+
+            color: transparent;
+
+            -webkit-text-stroke: 1px #c8a96b;
+        }
+
+
+        .hero-subtitle {
+
+            font-size: 19px;
+
+            color: #ddd7cb;
+
+            max-width: 600px;
+
+            line-height: 1.9;
+        }
+
+
+
+        /* =========================
+           VIDEO
+        ========================= */
+
+        .video-section {
+
+            padding: 70px 7% 30px;
+        }
+
+
+        .video-heading {
+
+            margin-bottom: 30px;
+        }
+
+
+        .video-heading h2 {
+
+            font-size: clamp(32px, 5vw, 55px);
+
+            font-weight: 400;
+
+            margin-bottom: 12px;
+        }
+
+
+        .video-heading p {
+
+            color: #99958c;
+
+            font-size: 14px;
+        }
+
+
+        .video-box {
+
+            width: 100%;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            background: #111;
+
+            overflow: hidden;
+        }
+
+
+        .video-box video {
+
+            display: block;
+
+            width: 100%;
+
+            max-height: 650px;
+
+            object-fit: cover;
+
+            background: #111;
+        }
+
+
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery-section {
+
+            padding: 80px 7% 120px;
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            gap: 30px;
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: clamp(32px, 5vw, 60px);
+
+            font-weight: 400;
+        }
+
+
+        .section-heading p {
+
+            color: #aaa59b;
+
+            max-width: 400px;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+
+
+        /* =========================
+           PHOTO GRID
+        ========================= */
+
+        .gallery-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .gallery-item {
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #292927;
+
+            cursor: pointer;
+        }
+
+
+        .gallery-item:nth-child(1),
+        .gallery-item:nth-child(4) {
+
+            grid-row: span 2;
+        }
+
+
+        .gallery-item img {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 360px;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.6s ease;
+        }
+
+
+        .gallery-item:hover img {
+
+            transform: scale(1.05);
+        }
+
+
+        .gallery-item::after {
+
+            content: "عرض الصورة";
+
+            position: absolute;
+
+            left: 20px;
+
+            bottom: 20px;
+
+            padding: 8px 14px;
+
+            background: rgba(32,32,30,0.8);
+
+            border: 1px solid rgba(200,169,107,0.5);
+
+            color: #f4f0e8;
+
+            font-size: 12px;
+
+            opacity: 0;
+
+            transform: translateY(10px);
+
+            transition: 0.3s;
+        }
+
+
+        .gallery-item:hover::after {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+
+        /* =========================
+           LIGHTBOX
+        ========================= */
+
+        .lightbox {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(10,10,9,0.96);
+
+            z-index: 100;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+
+        .lightbox.active {
+
+            display: flex;
+        }
+
+
+        .lightbox img {
+
+            max-width: 90%;
+
+            max-height: 85vh;
+
+            object-fit: contain;
+        }
+
+
+        .close-lightbox {
+
+            position: absolute;
+
+            top: 25px;
+
+            right: 35px;
+
+            background: none;
+
+            border: none;
+
+            color: white;
+
+            font-size: 38px;
+
+            cursor: pointer;
+        }
+
+
+        .lightbox-btn {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 50px;
+
+            height: 50px;
+
+            border: 1px solid #c8a96b;
+
+            background: rgba(32,32,30,0.7);
+
+            color: #c8a96b;
+
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+
+        .lightbox-prev {
+            right: 30px;
+        }
+
+
+        .lightbox-next {
+            left: 30px;
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            border-top: 1px solid rgba(200,169,107,0.2);
+
+            padding: 45px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        .footer-logo strong {
+
+            display: block;
+
+            font-size: 22px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .footer-logo span {
+
+            color: #c8a96b;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .footer-text {
+
+            color: #8f8b83;
+
+            font-size: 13px;
+        }
+
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .header {
+                padding: 20px 6%;
+            }
+
+
+            .logo strong {
+                font-size: 19px;
+            }
+
+
+            .back-btn {
+                font-size: 12px;
+            }
+
+
+            .page-hero {
+
+                min-height: 60vh;
+
+                padding: 130px 6% 70px;
+            }
+
+
+            .hero-title {
+                font-size: 58px;
+            }
+
+
+            .hero-subtitle {
+                font-size: 15px;
+            }
+
+
+            .video-section {
+
+                padding: 60px 6% 20px;
+            }
+
+
+            .video-box video {
+
+                max-height: 500px;
+            }
+
+
+            .gallery-section {
+
+                padding: 65px 6% 80px;
+            }
+
+
+            .section-heading {
+
+                display: block;
+
+                margin-bottom: 35px;
+            }
+
+
+            .section-heading h2 {
+
+                margin-bottom: 15px;
+            }
+
+
+            .gallery-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+            }
+
+
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(4) {
+
+                grid-row: auto;
+            }
+
+
+            .gallery-item img {
+
+                min-height: 300px;
+            }
+
+
+            .lightbox {
+
+                padding: 15px;
+            }
+
+
+            .lightbox img {
+
+                max-width: 94%;
+
+                max-height: 75vh;
+            }
+
+
+            .close-lightbox {
+
+                top: 15px;
+
+                right: 20px;
+            }
+
+
+            .lightbox-btn {
+
+                width: 42px;
+
+                height: 42px;
+            }
+
+
+            .lightbox-prev {
+                right: 10px;
+            }
+
+
+            .lightbox-next {
+                left: 10px;
+            }
+
+
+            footer {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <a href="index.html" class="logo">
+
+        <strong>TULIP</strong>
+
+        <span>للمطابخ</span>
+
+    </a>
+
+
+    <a
+        href="index.html#work-categories"
+        class="back-btn"
+    >
+        ← رجوع للأعمال
+    </a>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="page-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-number">
+            04 • أعمالنا
+        </div>
+
+
+        <h1 class="hero-title">
+
+            خشمونيوم
+
+            <br>
+
+            <span>Aluminum</span>
+
+        </h1>
+
+
+        <p class="hero-subtitle">
+
+            تصميمات خشمونيوم تجمع بين المتانة،
+            الأناقة، وسهولة الاستخدام.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VIDEO
+===================================================== -->
+
+<section class="video-section">
+
+    <div class="video-heading">
+
+        <h2>
+            شوف شغلنا
+        </h2>
+
+        <p>
+            لمحة من تنفيذات الخشمونيوم من توليب للمطابخ.
+        </p>
+
+    </div>
+
+
+    <div class="video-box">
+
+        <video
+            controls
+            muted
+            playsinline
+            preload="metadata"
+        >
+
+            <source
+                src="aluminum/a1.mp4"
+                type="video/mp4"
+            >
+
+            المتصفح الخاص بك لا يدعم تشغيل الفيديو.
+
+        </video>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="gallery-section">
+
+    <div class="section-heading">
+
+        <h2>
+            أعمال الخشمونيوم
+        </h2>
+
+
+        <p>
+
+            مجموعة من تصميمات وتنفيذات
+            الخشمونيوم الخاصة بنا.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="gallery-grid">
+
+
+        <div class="gallery-item">
+            <img src="aluminum/a1.jpg" alt="خشمونيوم 1">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="aluminum/a2.jpg" alt="خشمونيوم 2">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="aluminum/a3.jpg" alt="خشمونيوم 3">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="aluminum/a4.jpg" alt="خشمونيوم 4">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="aluminum/a5.jpg" alt="خشمونيوم 5">
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LIGHTBOX
+===================================================== -->
+
+<div class="lightbox" id="lightbox">
+
+
+    <button
+        class="close-lightbox"
+        id="closeLightbox"
+    >
+        ×
+    </button>
+
+
+    <button
+        class="lightbox-btn lightbox-prev"
+        id="prevBtn"
+    >
+        →
+    </button>
+
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt=""
+    >
+
+
+    <button
+        class="lightbox-btn lightbox-next"
+        id="nextBtn"
+    >
+        ←
+    </button>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        <strong>TULIP</strong>
+
+        <span>
+            للمطابخ
+        </span>
+
+    </div>
+
+
+    <div class="footer-text">
+
+        نصمم مطابخ تجمع بين الأناقة،
+        العملية، والتفاصيل اللي تفرق.
+
+    </div>
+
+
+</footer>
+
+
+
+<script>
+
+    /* =========================
+       LIGHTBOX
+    ========================= */
+
+    const galleryItems =
+        document.querySelectorAll(".gallery-item img");
+
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+
+    const lightboxImage =
+        document.getElementById("lightboxImage");
+
+
+    const closeLightbox =
+        document.getElementById("closeLightbox");
+
+
+    const prevBtn =
+        document.getElementById("prevBtn");
+
+
+    const nextBtn =
+        document.getElementById("nextBtn");
+
+
+    let currentIndex = 0;
+
+
+
+    function openLightbox(index) {
+
+        currentIndex = index;
+
+        lightboxImage.src =
+            galleryItems[currentIndex].src;
+
+        lightbox.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+
+
+    function closeBox() {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+
+    function showNext() {
+
+        currentIndex++;
+
+        if (
+            currentIndex >= galleryItems.length
+        ) {
+
+            currentIndex = 0;
+
+        }
+
+        lightboxImage.src =
+            galleryItems[currentIndex].src;
+
+    }
+
+
+
+    function showPrevious() {
+
+        currentIndex--;
+
+        if (currentIndex < 0) {
+
+            currentIndex =
+                galleryItems.length - 1;
+
+        }
+
+        lightboxImage.src =
+            galleryItems[currentIndex].src;
+
+    }
+
+
+
+    galleryItems.forEach(
+        (image, index) => {
+
+            image.addEventListener(
+                "click",
+                () => {
+
+                    openLightbox(index);
+
+                }
+            );
+
+        }
+    );
+
+
+
+    closeLightbox.addEventListener(
+        "click",
+        closeBox
+    );
+
+
+    nextBtn.addEventListener(
+        "click",
+        showNext
+    );
+
+
+    prevBtn.addEventListener(
+        "click",
+        showPrevious
+    );
+
+
+
+    lightbox.addEventListener(
+        "click",
+        (e) => {
+
+            if (e.target === lightbox) {
+
+                closeBox();
+
+            }
+
+        }
+    );
+
+
+
+    document.addEventListener(
+        "keydown",
+        (e) => {
+
+            if (
+                !lightbox.classList.contains("active")
+            ) {
+
+                return;
+
+            }
+
+
+            if (e.key === "Escape") {
+
+                closeBox();
+
+            }
+
+
+            if (e.key === "ArrowRight") {
+
+                showPrevious();
+
+            }
+
+
+            if (e.key === "ArrowLeft") {
+
+                showNext();
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
