@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>كلادينج | توليب للمطابخ</title>
+
+
+    <style>
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #20201e;
+            color: #fff;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .cladding-header {
+
+            width: 100%;
+
+            padding: 30px 6%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom: 1px solid rgba(255,255,255,.10);
+
+        }
+
+
+        .cladding-logo {
+
+            font-size: 23px;
+
+            letter-spacing: 4px;
+
+            color: #fff;
+
+        }
+
+
+        .cladding-logo span {
+
+            display: block;
+
+            margin-top: 5px;
+
+            color: #b89b70;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .cladding-back {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 11px 20px;
+
+            color: #fff;
+
+            text-decoration: none;
+
+            border: 1px solid rgba(255,255,255,.25);
+
+            font-size: 13px;
+
+            transition: .3s;
+
+        }
+
+
+        .cladding-back:hover {
+
+            background: #b89b70;
+
+            border-color: #b89b70;
+
+            color: #20201e;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .cladding-hero {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 100px 6% 80px;
+
+            text-align: center;
+
+        }
+
+
+        .cladding-label {
+
+            display: block;
+
+            margin-bottom: 22px;
+
+            color: #b89b70;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .cladding-hero h1 {
+
+            font-size: clamp(50px, 7vw, 90px);
+
+            font-weight: 300;
+
+            line-height: 1;
+
+        }
+
+
+        .cladding-hero h1 span {
+
+            display: block;
+
+            margin-top: 15px;
+
+            color: #b89b70;
+
+            font-size: .38em;
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .cladding-hero p {
+
+            max-width: 600px;
+
+            margin: 30px auto 0;
+
+            color: #aaa7a0;
+
+            font-size: 14px;
+
+            line-height: 2;
+
+        }
+
+
+        /* =====================================================
+           SECTION TITLES
+        ===================================================== */
+
+        .cladding-section-title {
+
+            max-width: 1150px;
+
+            margin: 0 auto 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        .cladding-section-number {
+
+            color: #b89b70;
+
+            font-family: Georgia, serif;
+
+            font-size: 16px;
+
+        }
+
+
+        .cladding-section-title small {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #77736d;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .cladding-section-title h2 {
+
+            margin: 0;
+
+            color: #fff;
+
+            font-size: 23px;
+
+            font-weight: 400;
+
+        }
+
+
+        /* =====================================================
+           VIDEOS SECTION
+        ===================================================== */
+
+        .cladding-videos-section {
+
+            padding: 20px 6% 100px;
+
+        }
+
+
+        .cladding-video-slider {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+
+        .cladding-video-track {
+
+            width: 100%;
+
+            display: flex;
+
+            gap: 18px;
+
+            overflow-x: auto;
+
+            scroll-behavior: smooth;
+
+            scrollbar-width: none;
+
+            scroll-snap-type: x mandatory;
+
+            cursor: grab;
+
+        }
+
+
+        .cladding-video-track::-webkit-scrollbar {
+
+            display: none;
+
+        }
+
+
+        .cladding-video-track:active {
+
+            cursor: grabbing;
+
+        }
+
+
+        .cladding-video-card {
+
+            flex: 0 0 calc((100% - 36px) / 3);
+
+            aspect-ratio: 16 / 10;
+
+            overflow: hidden;
+
+            background: #111;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            scroll-snap-align: center;
+
+        }
+
+
+        .cladding-video-card video {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+        }
+
+
+        /* =====================================================
+           VIDEO ARROWS
+        ===================================================== */
+
+        .cladding-video-arrow {
+
+            flex-shrink: 0;
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(184,155,112,.5);
+
+            background: transparent;
+
+            color: #c3a77e;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+
+        .cladding-video-arrow:hover {
+
+            background: #b89b70;
+
+            color: #20201e;
+
+        }
+
+
+        /* =====================================================
+           VIDEO DOTS
+        ===================================================== */
+
+        .cladding-video-dots {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin: 25px 0 90px;
+
+        }
+
+
+        .cladding-video-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            padding: 0;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background: #68645e;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+
+        .cladding-video-dot.active {
+
+            width: 28px;
+
+            border-radius: 10px;
+
+            background: #b89b70;
+
+        }
+
+
+        /* =====================================================
+           PHOTOS SECTION
+        ===================================================== */
+
+        .cladding-photos-section {
+
+            padding: 0 6% 110px;
+
+        }
+
+
+        .cladding-photo-grid {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 14px;
+
+        }
+
+
+        .cladding-photo {
+
+            position: relative;
+
+            aspect-ratio: 1 / 1;
+
+            overflow: hidden;
+
+            background: #111;
+
+            cursor: pointer;
+
+        }
+
+
+        .cladding-photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition: transform .5s ease;
+
+        }
+
+
+        .cladding-photo::after {
+
+            content: "＋";
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: rgba(0,0,0,.38);
+
+            color: #fff;
+
+            font-size: 30px;
+
+            opacity: 0;
+
+            transition: .3s;
+
+        }
+
+
+        .cladding-photo:hover::after {
+
+            opacity: 1;
+
+        }
+
+
+        .cladding-photo:hover img {
+
+            transform: scale(1.06);
+
+        }
+
+
+        /* =====================================================
+           LIGHTBOX
+        ===================================================== */
+
+        .cladding-lightbox {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+
+            background: rgba(0,0,0,.95);
+
+        }
+
+
+        .cladding-lightbox.active {
+
+            display: flex;
+
+        }
+
+
+        .cladding-lightbox img {
+
+            max-width: 85vw;
+
+            max-height: 85vh;
+
+            object-fit: contain;
+
+        }
+
+
+        .cladding-lightbox-close {
+
+            position: absolute;
+
+            top: 25px;
+
+            right: 30px;
+
+            width: 48px;
+
+            height: 48px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: #fff;
+
+            font-size: 38px;
+
+            cursor: pointer;
+
+        }
+
+
+        .cladding-lightbox-prev,
+        .cladding-lightbox-next {
+
+            position: absolute;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(255,255,255,.3);
+
+            background: rgba(255,255,255,.05);
+
+            color: #fff;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+        }
+
+
+        .cladding-lightbox-prev {
+
+            right: 30px;
+
+        }
+
+
+        .cladding-lightbox-next {
+
+            left: 30px;
+
+        }
+
+
+        .cladding-lightbox-prev:hover,
+        .cladding-lightbox-next:hover,
+        .cladding-lightbox-close:hover {
+
+            color: #b89b70;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .cladding-footer {
+
+            padding: 35px 6%;
+
+            border-top: 1px solid rgba(255,255,255,.1);
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+
+        }
+
+
+        .cladding-footer strong {
+
+            color: #b89b70;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+
+            .cladding-header {
+
+                padding: 24px 5%;
+
+            }
+
+
+            .cladding-logo {
+
+                font-size: 19px;
+
+            }
+
+
+            .cladding-back {
+
+                padding: 9px 13px;
+
+                font-size: 12px;
+
+            }
+
+
+            .cladding-hero {
+
+                padding: 75px 5% 60px;
+
+            }
+
+
+            .cladding-hero h1 {
+
+                font-size: 55px;
+
+            }
+
+
+            .cladding-videos-section {
+
+                padding: 10px 5% 70px;
+
+            }
+
+
+            .cladding-video-slider {
+
+                gap: 8px;
+
+            }
+
+
+            .cladding-video-card {
+
+                flex: 0 0 86%;
+
+            }
+
+
+            .cladding-video-arrow {
+
+                width: 40px;
+
+                height: 40px;
+
+                font-size: 17px;
+
+            }
+
+
+            .cladding-photos-section {
+
+                padding: 0 5% 80px;
+
+            }
+
+
+            .cladding-photo-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 10px;
+
+            }
+
+
+            .cladding-section-title h2 {
+
+                font-size: 19px;
+
+            }
+
+
+            .cladding-lightbox {
+
+                padding: 15px;
+
+            }
+
+
+            .cladding-lightbox img {
+
+                max-width: 92vw;
+
+                max-height: 80vh;
+
+            }
+
+
+            .cladding-lightbox-prev {
+
+                right: 10px;
+
+            }
+
+
+            .cladding-lightbox-next {
+
+                left: 10px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="cladding-header">
+
+        <div class="cladding-logo">
+
+            TULIP
+
+            <span>للمطابخ</span>
+
+        </div>
+
+
+        <a
+            href="index.html#work-categories"
+            class="cladding-back"
+        >
+
+            ← رجوع لأعمالنا
+
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="cladding-hero">
+
+        <span class="cladding-label">
+
+            01 • أعمالنا
+
+        </span>
+
+
+        <h1>
+
+            كلادينج
+
+            <span>
+                تفاصيل تفرق
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            مجموعة من أعمالنا في تنفيذ وتصميم الكلادينج
+            بتفاصيل عصرية وتشطيبات تليق بكل مساحة.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VIDEOS
+    ===================================================== -->
+
+    <section class="cladding-videos-section">
+
+
+        <div class="cladding-section-title">
+
+            <span class="cladding-section-number">
+                01
+            </span>
+
+            <div>
+
+                <small>
+                    VIDEO SHOWCASE
+                </small>
+
+                <h2>
+                    شوف الشغل على حقيقته
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="cladding-video-slider">
+
+
+            <button
+                class="cladding-video-arrow"
+                id="claddingPrev"
+                type="button"
+            >
+                →
+            </button>
+
+
+
+            <div
+                class="cladding-video-track"
+                id="claddingVideoTrack"
+            >
+
+
+                <!-- VIDEO 1 -->
+
+                <div class="cladding-video-card">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="cladding/c1.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                </div>
+
+
+
+                <!-- VIDEO 2 -->
+
+                <div class="cladding-video-card">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="cladding/c2.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                </div>
+
+
+
+                <!-- VIDEO 3 -->
+
+                <div class="cladding-video-card">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="cladding/c3.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                </div>
+
+
+
+                <!-- VIDEO 4 -->
+
+                <div class="cladding-video-card">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="cladding/c4.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                </div>
+
+
+
+                <!-- VIDEO 5 -->
+
+                <div class="cladding-video-card">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="cladding/c5.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                </div>
+
+
+
+                <!-- VIDEO 6 -->
+
+                <div class="cladding-video-card">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="cladding/c6.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                </div>
+
+
+
+                <!-- VIDEO 7 -->
+
+                <div class="cladding-video-card">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="cladding/c7.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                </div>
+
+
+
+                <!-- VIDEO 8 -->
+
+                <div class="cladding-video-card">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="cladding/c8.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                </div>
+
+
+
+                <!-- VIDEO 9 -->
+
+                <div class="cladding-video-card">
+
+                    <video
+                        controls
+                        playsinline
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="cladding/c9.mp4"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                </div>
+
+
+            </div>
+
+
+
+            <button
+                class="cladding-video-arrow"
+                id="claddingNext"
+                type="button"
+            >
+                ←
+            </button>
+
+
+        </div>
+
+
+
+        <!-- VIDEO DOTS -->
+
+        <div
+            class="cladding-video-dots"
+            id="claddingVideoDots"
+        >
+
+            <button class="cladding-video-dot active"></button>
+
+            <button class="cladding-video-dot"></button>
+
+            <button class="cladding-video-dot"></button>
+
+            <button class="cladding-video-dot"></button>
+
+            <button class="cladding-video-dot"></button>
+
+            <button class="cladding-video-dot"></button>
+
+            <button class="cladding-video-dot"></button>
+
+            <button class="cladding-video-dot"></button>
+
+            <button class="cladding-video-dot"></button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PHOTOS
+    ===================================================== -->
+
+    <section class="cladding-photos-section">
+
+
+        <div class="cladding-section-title">
+
+            <span class="cladding-section-number">
+                02
+            </span>
+
+            <div>
+
+                <small>
+                    PHOTO GALLERY
+                </small>
+
+                <h2>
+                    من تفاصيل شغلنا
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="cladding-photo-grid">
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c1.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c2.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c3.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c4.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c5.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c6.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c7.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c8.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c9.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c10.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c11.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c12.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c13.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c14.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+            <div class="cladding-photo">
+
+                <img
+                    src="cladding/c15.jpg"
+                    alt="كلادينج توليب"
+                >
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LIGHTBOX
+    ===================================================== -->
+
+    <div
+        class="cladding-lightbox"
+        id="claddingLightbox"
+    >
+
+
+        <button
+            class="cladding-lightbox-close"
+            id="claddingClose"
+            type="button"
+        >
+            ×
+        </button>
+
+
+
+        <button
+            class="cladding-lightbox-prev"
+            id="claddingLightboxPrev"
+            type="button"
+        >
+            →
+        </button>
+
+
+
+        <img
+            id="claddingLightboxImage"
+            src=""
+            alt="كلادينج توليب"
+        >
+
+
+
+        <button
+            class="cladding-lightbox-next"
+            id="claddingLightboxNext"
+            type="button"
+        >
+            ←
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer class="cladding-footer">
+
+        © 2026
+
+        <strong>
+            توليب للمطابخ
+        </strong>
+
+        — جميع الحقوق محفوظة
+
+    </footer>
+
+
+
+    <script>
+
+
+        /* =====================================================
+           VIDEO SLIDER
+        ===================================================== */
+
+        const videoTrack =
+            document.getElementById("claddingVideoTrack");
+
+
+        const videoPrev =
+            document.getElementById("claddingPrev");
+
+
+        const videoNext =
+            document.getElementById("claddingNext");
+
+
+        const videoDots =
+            document.querySelectorAll(
+                ".cladding-video-dot"
+            );
+
+
+        const videoCards =
+            document.querySelectorAll(
+                ".cladding-video-card"
+            );
+
+
+        function moveVideos(direction) {
+
+            const card =
+                videoCards[0];
+
+            if (!card) return;
+
+
+            const gap = 18;
+
+            const amount =
+                card.offsetWidth + gap;
+
+
+            videoTrack.scrollBy({
+
+                left: direction * amount,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+        videoPrev.addEventListener(
+            "click",
+            () => {
+
+                moveVideos(1);
+
+            }
+        );
+
+
+        videoNext.addEventListener(
+            "click",
+            () => {
+
+                moveVideos(-1);
+
+            }
+        );
+
+
+
+        /* =====================================================
+           VIDEO DOTS
+        ===================================================== */
+
+        videoDots.forEach(
+            (dot, index) => {
+
+                dot.addEventListener(
+                    "click",
+                    () => {
+
+                        const card =
+                            videoCards[index];
+
+                        if (!card) return;
+
+
+                        videoTrack.scrollTo({
+
+                            left: card.offsetLeft,
+
+                            behavior: "smooth"
+
+                        });
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           UPDATE ACTIVE DOT
+        ===================================================== */
+
+        videoTrack.addEventListener(
+            "scroll",
+            () => {
+
+                let closestIndex = 0;
+
+                let smallestDistance =
+                    Infinity;
+
+
+                videoCards.forEach(
+                    (card, index) => {
+
+                        const distance =
+                            Math.abs(
+                                card.offsetLeft -
+                                videoTrack.scrollLeft
+                            );
+
+
+                        if (
+                            distance <
+                            smallestDistance
+                        ) {
+
+                            smallestDistance =
+                                distance;
+
+                            closestIndex =
+                                index;
+
+                        }
+
+                    }
+                );
+
+
+                videoDots.forEach(
+                    (dot, index) => {
+
+                        dot.classList.toggle(
+                            "active",
+                            index === closestIndex
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           MOUSE DRAG
+        ===================================================== */
+
+        let isDragging = false;
+
+        let startX = 0;
+
+        let startScroll = 0;
+
+
+        videoTrack.addEventListener(
+            "mousedown",
+            (e) => {
+
+                isDragging = true;
+
+                startX = e.pageX;
+
+                startScroll =
+                    videoTrack.scrollLeft;
+
+            }
+        );
+
+
+        videoTrack.addEventListener(
+            "mouseup",
+            () => {
+
+                isDragging = false;
+
+            }
+        );
+
+
+        videoTrack.addEventListener(
+            "mouseleave",
+            () => {
+
+                isDragging = false;
+
+            }
+        );
+
+
+        videoTrack.addEventListener(
+            "mousemove",
+            (e) => {
+
+                if (!isDragging) return;
+
+                e.preventDefault();
+
+
+                const walk =
+                    (e.pageX - startX) * 1.3;
+
+
+                videoTrack.scrollLeft =
+                    startScroll - walk;
+
+            }
+        );
+
+
+
+        /* =====================================================
+           LIGHTBOX
+        ===================================================== */
+
+        const photoImages =
+            document.querySelectorAll(
+                ".cladding-photo img"
+            );
+
+
+        const lightbox =
+            document.getElementById(
+                "claddingLightbox"
+            );
+
+
+        const lightboxImage =
+            document.getElementById(
+                "claddingLightboxImage"
+            );
+
+
+        const lightboxClose =
+            document.getElementById(
+                "claddingClose"
+            );
+
+
+        const lightboxPrev =
+            document.getElementById(
+                "claddingLightboxPrev"
+            );
+
+
+        const lightboxNext =
+            document.getElementById(
+                "claddingLightboxNext"
+            );
+
+
+        let currentPhoto = 0;
+
+
+
+        /* OPEN PHOTO */
+
+        function openPhoto(index) {
+
+            currentPhoto = index;
+
+
+            lightboxImage.src =
+                photoImages[currentPhoto].src;
+
+
+            lightbox.classList.add(
+                "active"
+            );
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+
+        /* CLOSE PHOTO */
+
+        function closePhoto() {
+
+            lightbox.classList.remove(
+                "active"
+            );
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+
+        /* PHOTO CLICK */
+
+        photoImages.forEach(
+            (image, index) => {
+
+                image.parentElement.addEventListener(
+                    "click",
+                    () => {
+
+                        openPhoto(index);
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        /* NEXT PHOTO */
+
+        function nextPhoto() {
+
+            currentPhoto++;
+
+
+            if (
+                currentPhoto >=
+                photoImages.length
+            ) {
+
+                currentPhoto = 0;
+
+            }
+
+
+            lightboxImage.src =
+                photoImages[currentPhoto].src;
+
+        }
+
+
+
+        /* PREVIOUS PHOTO */
+
+        function previousPhoto() {
+
+            currentPhoto--;
+
+
+            if (currentPhoto < 0) {
+
+                currentPhoto =
+                    photoImages.length - 1;
+
+            }
+
+
+            lightboxImage.src =
+                photoImages[currentPhoto].src;
+
+        }
+
+
+
+        lightboxNext.addEventListener(
+            "click",
+            nextPhoto
+        );
+
+
+        lightboxPrev.addEventListener(
+            "click",
+            previousPhoto
+        );
+
+
+        lightboxClose.addEventListener(
+            "click",
+            closePhoto
+        );
+
+
+
+        /* CLOSE WHEN CLICKING BACKGROUND */
+
+        lightbox.addEventListener(
+            "click",
+            (e) => {
+
+                if (
+                    e.target === lightbox
+                ) {
+
+                    closePhoto();
+
+                }
+
+            }
+        );
+
+
+
+        /* ESCAPE */
+
+        document.addEventListener(
+            "keydown",
+            (e) => {
+
+                if (
+                    !lightbox.classList.contains(
+                        "active"
+                    )
+                ) return;
+
+
+                if (
+                    e.key === "Escape"
+                ) {
+
+                    closePhoto();
+
+                }
+
+
+                if (
+                    e.key === "ArrowRight"
+                ) {
+
+                    previousPhoto();
+
+                }
+
+
+                if (
+                    e.key === "ArrowLeft"
+                ) {
+
+                    nextPhoto();
+
+                }
+
+            }
+        );
+
+
+    </script>
+
+</body>
+
+</html>
